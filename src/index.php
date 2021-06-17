@@ -2,7 +2,7 @@
 
 require_once './include/constants.php';
 require_once './include/helpers.php';
-// set order
+
 $order = (isset($_POST['desc']) && filter_var($_POST['desc'], FILTER_VALIDATE_BOOLEAN)) ? 'DESC' : 'ASC';
 $sql =
     "SELECT 
@@ -22,7 +22,7 @@ $prepared = $pdo->prepare($sql);
 $prepared->bindParam(':sort', $order, PDO::PARAM_INT);
 $prepared->execute();
 $result = $prepared->fetchAll(PDO::FETCH_ASSOC);
-// Api call
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Content-Type', 'text/json');
     die (json_encode($result));
@@ -56,11 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <tr>
             <td><?= $row['Continent'] ?? '0'; ?></td>
             <td><?= $row['Region'] ?? '0'; ?></td>
-            <td><?= $row['Countries']?? '0'; ?></td>
-            <td><?= $row['lifeDuration']?? '0'; ?></td>
-            <td><?= $row['Population']?? '0'; ?></td>
-            <td><?= $row['Cities']?? '0'; ?></td>
-            <td><?= $row['languages']?? '0'; ?></td>
+            <td><?= $row['Countries'] ?? '0'; ?></td>
+            <td><?= $row['lifeDuration'] ?? '0'; ?></td>
+            <td><?= $row['Population'] ?? '0'; ?></td>
+            <td><?= $row['Cities'] ?? '0'; ?></td>
+            <td><?= $row['languages'] ?? '0'; ?></td>
         </tr>
     <? } ?>
     </tbody>
