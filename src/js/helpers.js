@@ -20,9 +20,3 @@ function createXMLHTTPObject() {
     }
     return xmlhttp;
 }
-
-function urlEncode(object) {
-    const formData = new FormData();
-    Object.keys(object).forEach(key => formData.append(key, object[key]));
-    return new URLSearchParams(formData).toString();
-}

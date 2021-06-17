@@ -65,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <? } ?>
     </tbody>
 </table>
-<script src="./js/foreach.js"></script>
 <script src="./js/helpers.js"></script>
+<script src="./js/foreach.js"></script>
 <script src="./js/app.js"></script>
 </body>
 </html>

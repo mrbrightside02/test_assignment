@@ -10,7 +10,7 @@ function requestWithCallback(data, callback) {
         table = document.getElementById('content');
 
     xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-type", "application/json");
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
@@ -30,7 +30,7 @@ function requestWithCallback(data, callback) {
         }
     };
 
-    xhr.send(urlEncode(data));
+    xhr.send(JSON.stringify(data));
 }
 
 (function () {

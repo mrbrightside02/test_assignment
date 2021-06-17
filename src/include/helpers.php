@@ -16,3 +16,7 @@ function getFieldName ($template) {
     return FIELD_LIST[strtolower($template)]
         ?? DEFAULT_SORT_FIELD;
 }
+
+$json = file_get_contents('php://input');
+// Converts it into a PHP object
+$_POST = json_decode($json, true);
