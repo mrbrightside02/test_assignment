@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.report_table{
+    max-width: 990px;
+    margin: 70px auto;
+    border-collapse: collapse;
+}
+.report_table thead{
+    background: darkgreen;
+    color: #fff;
+    font-weight: normal;
+    cursor: pointer;
+    user-select: none;
+}
+.report_table th.up:before{
+    content: "⏶";
+    position: absolute;
+    left: 3px;
+    top:5px;
+}
+.report_table th.down:before{
+    content: "⏷";
+    position: absolute;
+    left: 3px;
+    top:5px;
+}
+.report_table th, .report_table td{
+    position: relative;
+    padding: 8px 20px;
+    border-bottom: 1px solid #ccc;
+}
+.report_table td, .report_table th{
+    border-left: 1px solid #ccc;
+}
+.report_table td:first-child, .report_table th:first-child{
+    border-left: none;
+}
